@@ -1,0 +1,12 @@
+#define MOD_MORPH(NAME, NORMAL, MODDED, MODS) \
+  mm_##NAME: NAME { \
+    compatible = "zmk,behavior-mod-morph"; \
+    #binding-cells = <0>; \
+    bindings = <&kp NORMAL>, <&kp MODDED>; \
+    mods = <MODS>; \
+  };
+
+MOD_MORPH(csemi, COMMA, SEMI, (MOD_LSFT|MOD_RSFT))
+MOD_MORPH(dcoln, DOT, COLON, (MOD_LSFT|MOD_RSFT))
+MOD_MORPH(lparlt, LPAR, LT, (MOD_LSFT|MOD_RSFT))
+MOD_MORPH(rpargt, RPAR, GT, (MOD_LSFT|MOD_RSFT))
