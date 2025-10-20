@@ -133,12 +133,6 @@
             tapping-term-ms = <200>;
             bindings = <&mo NUMB>, <&mo FUNC>;
         };
-        nav_mou: navi_mouse {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mo NAVI>, <&mo MOUS>;
-        };
         blconfirm: bootloader_confirmation {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
