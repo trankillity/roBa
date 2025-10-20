@@ -11,10 +11,9 @@
 
 #define BASE 0
 #define NAVI 1
-#define MOUS 2
-#define NUMB 3
-#define FUNC 4
-#define SYST 5
+#define NUMB 2
+#define FUNC 3
+#define SYST 4
 
 #define MOD_MORPH(NAME, NORMAL, MODDED, MODS) \
   mm_##NAME: NAME { \
@@ -174,15 +173,15 @@
             bindings = <
 &kp INS       &kp HOME      &kp UP        &kp END       &kp PG_UP                                         &kp K_APP     &swap_next    &swap_prev    &none         &blconfirm
 &kp LC(A)     &kp LEFT      &kp DOWN      &kp RIGHT     &kp PG_DN     &trans              &trans          &kp C_VOL_UP  &kp C_PREV    &kp C_PP      &kp C_NEXT    &kp C_STOP
-&kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp LC(Y)     &trans              &trans          &kp C_VOL_DN  &kp RSHIFT    &kp RCTRL     &kp RALT      &kp RGUI
-&trans        &trans        &trans        &trans        &trans        &trans              &trans          &trans                                                  &trans        
+&kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp LC(Y)     &trans              &bootloader     &kp C_VOL_DN  &kp RSHIFT    &kp RCTRL     &kp RALT      &kp RGUI
+&trans        &trans        &trans        &kp DEL       &trans        &trans              &trans          &trans                                                  &trans        
             >;
         };
 
         numb_layer {
             bindings = <
 &blconfirm    &none         &none         &none         &none                                             &kp EQUAL     &kp N7        &kp N8        &kp N9        &kp DOT
-&none         &none         &none         &none         &none         &none               &trans          &kp PLUS      &kp N4        &kp N5        &kp N6        &kp ASTRK
+&none         &none         &none         &none         &none         &bootloader         &trans          &kp PLUS      &kp N4        &kp N5        &kp N6        &kp ASTRK
 &kp LGUI      &kp LALT      &kp LCTL      &kp LSHFT     &trans        &trans              &trans          &kp MINUS     &kp N1        &kp N2        &kp N3        &kp FSLH
 &trans        &trans        &trans        &trans        &trans        &trans              &trans          &kp N0                                                  &trans        
             >;
