@@ -148,7 +148,7 @@
 
 /*
         layer_template {
-            bingings = <
+            bindings = <
 &trans        &trans        &trans        &trans        &trans                                            &trans        &trans        &trans        &trans        &trans        
 &trans        &trans        &trans        &trans        &trans        &trans              &trans          &trans        &trans        &trans        &trans        &trans        
 &trans        &trans        &trans        &trans        &trans        &trans              &trans          &trans        &trans        &trans        &trans        &trans        
@@ -194,7 +194,7 @@
         };
 
         scrl_layer {
-            bingings = <
+            bindings = <
 &trans        &trans        &trans        &trans        &trans                                            &trans        &trans        &trans        &trans        &trans        
 &trans        &trans        &trans        &trans        &trans        &trans              &trans          &trans        &trans        &trans        &trans        &trans        
 &trans        &trans        &trans        &trans        &trans        &trans              &trans          &trans        &trans        &trans        &trans        &trans        
