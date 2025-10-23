@@ -34,6 +34,7 @@
 
 &lt {
     tapping-term-ms = <150>;
+    flavor = "tap-preferred";
 };
 
 &trackball {
@@ -55,6 +56,14 @@
     };
 
     behaviors {
+        scr: scroll_layer {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <250>;
+            bindings = <&mo>, <&kp>;
+            display-name = "Scoll Layer";
+        };
         skq: sticky_key_quick_release {
             compatible = "zmk,behavior-sticky-key";
             #binding-cells = <1>;
@@ -159,9 +168,9 @@
 
         base_layer {
             bindings = <
-&kp Q         &kp W         &kp F         &kp P         &kp B                                             &kp J         &kp L         &lt SCRL U    &kp Y         &kp SQT
-&kp A         &kp R         &kp S         &kp T         &kp G         &mkp MB1            &mkp MB3        &kp M         &kp N         &kp E         &kp I         &kp O
-&hml LGUI Z   &hml LALT X   &hml LCTL C   &hml LSHFT D  &kp V         &mkp MB2            &kp ENTER       &kp K         &hmr RSHFT H  &hmr_c RCTL 0 &hmr_d RALT 0 &hmr RGUI FSLH
+&kp Q         &kp W         &kp F         &kp P         &kp B                                             &kp J         &kp L         &scr SCRL U   &kp Y         &kp SQT
+&kp A         &kp R         &kp S         &kp T         &kp G         &none               &none           &kp M         &kp N         &kp E         &kp I         &kp O
+&hml LGUI Z   &hml LALT X   &hml LCTL C   &hml LSHFT D  &kp V         &none               &none           &kp K         &hmr RSHFT H  &hmr_c RCTL 0 &hmr_d RALT 0 &hmr RGUI FSLH
 &kp LCTL      &kp LGUI      &kp LALT      &kp BSPC      &sft_caps     &num_fun            &mo NAVI        &kp SPACE                                               &kp ENTER
             >;
         };
