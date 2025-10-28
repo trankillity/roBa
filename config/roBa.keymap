@@ -8,13 +8,19 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+/ {
+};
+
 
 #define BASE 0
 #define NAVI 1
 #define NUMB 2
 #define FUNC 3
 #define SCRL 4
-#define SYST 5
+#define MOUS 5
+#define SYST 6
 
 #define MOD_MORPH(NAME, NORMAL, MODDED, MODS) \
   mm_##NAME: NAME { \
@@ -38,13 +44,20 @@
 };
 
 &trackball {
-    // automouse-layer = <4>;
+    automouse-layer = <MOUS>;
     scroll-layers = <SCRL>;
 };
 
 / {
     combos {
         #include "combos.overlay"
+    };
+
+    auto_mouse: auto_mouse {
+        compatible = "zmk,input-processor-temp-layer";
+        #input-processor-cells = <2>;
+        require-prior-idle-ms = <250>;
+        excluded-positions = <18 19 20>;
     };
 
     conditional_layers {
@@ -206,6 +219,15 @@
             bindings = <
 &trans        &trans        &trans        &trans        &trans                                            &trans        &trans        &trans        &trans        &trans        
 &trans        &trans        &trans        &trans        &trans        &trans              &trans          &trans        &trans        &trans        &trans        &trans        
+&trans        &trans        &trans        &trans        &trans        &trans              &trans          &trans        &trans        &trans        &trans        &trans        
+&trans        &trans        &trans        &trans        &trans        &trans              &trans          &trans                                                  &trans        
+            >;
+        };
+
+        mous_layer {
+            bindings = <
+&trans        &trans        &trans        &trans        &trans                                            &trans        &trans        &trans        &trans        &trans        
+&trans        &trans        &trans        &trans        &trans        &trans              &trans          &trans        &mkp MB1      &mkp MB3      &mkp MB2      &trans        
 &trans        &trans        &trans        &trans        &trans        &trans              &trans          &trans        &trans        &trans        &trans        &trans        
 &trans        &trans        &trans        &trans        &trans        &trans              &trans          &trans                                                  &trans        
             >;
